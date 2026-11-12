@@ -1,0 +1,8 @@
+# 操作系统与编辑器
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# 本地分发包通过 Release 提供，不进仓库
+*.zip

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 292px; margin: 0; padding: 16px; background: #fff; color: #2C2C2A;
+         font: 13px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+  h1 { margin: 0 0 2px; font-size: 15px; font-weight: 500; }
+  .sub { color: #5F5E5A; font-size: 12px; margin-bottom: 14px; }
+  .card { border: 1px solid rgba(0,0,0,.12); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .row + .row { margin-top: 8px; }
+  .label { color: #5F5E5A; }
+  .val { font-weight: 500; }
+  .ok { color: #0F6E56; }
+  .warn { color: #A32D2D; }
+  .muted { color: #888780; }
+  .stats { font-size: 12px; color: #5F5E5A; margin-top: 10px;
+           border-top: 1px solid rgba(0,0,0,.08); padding-top: 9px; }
+  button { width: 100%; border: 1px solid rgba(0,0,0,.16); border-radius: 8px;
+           background: #fff; color: #2C2C2A; padding: 8px 10px; font-size: 13px;
+           cursor: pointer; }
+  button:hover { background: #F1EFE8; }
+  button.primary { background: #0F6E56; border-color: #0F6E56; color: #fff; }
+  button.primary:hover { background: #085041; }
+  .tip { font-size: 12px; color: #5F5E5A; margin-top: 10px; }
+  .hint { font-size: 12px; color: #888780; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>东财DUFE数字党校党课不暂停播放</h1>
+  <div class="sub">仅作用于 szdx.dufe.edu.cn 播放页</div>
+
+  <div class="card">
+    <div class="row">
+      <span class="label">运行状态</span>
+      <span class="val" id="state">检测中…</span>
+    </div>
+    <div class="row">
+      <span class="label">当前页面</span>
+      <span class="val" id="page">-</span>
+    </div>
+    <div class="stats" id="stats">正在读取页面状态…</div>
+  </div>
+
+  <button id="injectNow" class="primary">立即注入到当前页（不刷新）</button>
+  <button id="toggleDialog" style="margin-top:10px">自动处理播完弹窗：开</button>
+  <button id="toggle" style="margin-top:10px">临时停用此功能</button>
+  <div class="tip" id="tip"></div>
+
+  <button id="reload" style="margin-top:10px">刷新当前页面并生效</button>
+  <div class="hint">更新扩展后点「立即注入」即可生效，不用刷新、不丢播放进度；想完全干净地重载则点「刷新」。<br>自动处理会依次点「跳过」→「确定」→「我知道了」，随后由平台自身逻辑加载下一节。停用只在播放页生效，考试页的切屏检测不受影响。</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
